@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tengo algo que decirte... 🌸</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --color-principal: #831843;
+            --color-secundario: #db2777;
+            --bg-gradiente: linear-gradient(135deg, #fff5f8 0%, #fce7f3 100%);
+        }
+
+        body {
+            background: var(--bg-gradiente);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            width: 85%;
+            border: 2px solid white;
+            z-index: 10;
+        }
+
+        .lily-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: heartBeat 2s infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 { color: var(--color-principal); font-size: 1.8rem; margin-bottom: 15px; }
+        p { color: #64748b; font-size: 1.1rem; margin-bottom: 30px; }
+
+        .btn-container { display: flex; justify-content: center; gap: 15px; min-height: 50px; }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #si { background-color: var(--color-secundario); color: white; box-shadow: 0 5px 15px rgba(219, 39, 119, 0.3); }
+        #no { background-color: #94a3b8; color: white; position: relative; }
+
+        .fade-out { opacity: 0; transform: scale(0.9); transition: all 0.8s ease; }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="mainCard">
+        <div class="lily-icon">🪷</div>
+        <h1>¿QUIERES SER EL AMOR DE MI VIDA?</h1>
+        <p>Tengo algo especial preparado para ti en este San Valentín...</p>
+        
+        <div class="btn-container">
+            <button id="si" onclick="aceptar()">¡SÍ! ❤️</button>
+            <button id="no" onmouseover="moverBoton()" onclick="moverBoton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moverBoton() {
+            const btnNo = document.getElementById('no');
+            const padding = 50;
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - padding);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight - padding);
+            btnNo.style.position = 'fixed';
+            btnNo.style.left = x + 'px';
+            btnNo.style.top = y + 'px';
+        }
+
+        function aceptar() {
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            setTimeout(() => {
+                document.getElementById('mainCard').classList.add('fade-out');
+                setTimeout(() => { window.location.href = "carta.html"; }, 800);
+            }, 500);
+        }
+    </script>
+</body>
+</html>

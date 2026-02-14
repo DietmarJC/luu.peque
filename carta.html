@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para Mi San Valentín 🌸</title>
+    <style>
+      body {
+        background-color: #fffafb;
+        background-image: radial-gradient(#fce7f3 1px, transparent 1px);
+        background-size: 20px 20px;
+        font-family: "Georgia", serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+        color: #5d1029;
+      }
+      .corner-lily {
+        position: fixed;
+        font-size: 40px;
+        z-index: 2000;
+        pointer-events: none;
+      }
+      .top-left {
+        top: 10px;
+        left: 10px;
+      }
+      .top-right {
+        top: 10px;
+        right: 10px;
+      }
+      .bottom-left {
+        bottom: 10px;
+        left: 10px;
+      }
+      .bottom-right {
+        bottom: 10px;
+        right: 10px;
+      }
+
+      .main-wrapper {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(5px);
+        max-width: 500px;
+        width: 100%;
+        border-radius: 40px;
+        padding: 30px 15px;
+        box-shadow: 0 0 40px rgba(219, 39, 119, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+        align-items: center;
+        margin: 30px 0;
+      }
+      .photo-card {
+        background: white;
+        padding: 10px 10px 35px 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transform: rotate(var(--r));
+        width: 80%;
+        border: 1px solid #eee;
+      }
+      .photo-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .poem-section {
+        position: relative;
+        padding: 35px 20px;
+        background: linear-gradient(135deg, #ffffff 0%, #fffdf5 100%);
+        border-radius: 15px;
+        margin: 30px auto;
+        text-align: center;
+        width: 85%;
+        border: 4px double #d4af37;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+      }
+      .poem-section::before {
+        content: "⚜️";
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fffafb;
+        padding: 0 10px;
+        color: #d4af37;
+      }
+      .poem-section p {
+        color: #064e3b;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        font-style: italic;
+        margin: 0;
+      }
+      .bible-ref {
+        margin-top: 15px;
+        color: #d4af37;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+
+      button {
+        background-color: #db2777;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(219, 39, 119, 0.3);
+        font-size: 1rem;
+      }
+      .fade-in {
+        animation: fadeIn 2s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      #musicControl {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 3000;
+        cursor: pointer;
+        background: white;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="fade-in">
+    <audio id="miMusica" loop>
+      <source src="musica.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="musicControl" onclick="toggleMusic()">🎵</div>
+
+    <div class="corner-lily top-left">🌸</div>
+    <div class="corner-lily top-right">🪷</div>
+    <div class="corner-lily bottom-left">🪷</div>
+    <div class="corner-lily bottom-right">🌸</div>
+
+    <div class="main-wrapper">
+      <div class="header"><h1>Para la dueña de mi corazón...</h1></div>
+
+      <div class="gallery">
+        <div class="photo-card" style="--r: -2deg">
+          <img src="foto1.jpeg" />
+        </div>
+        <div class="photo-card" style="--r: 3deg"><img src="foto.jpeg" /></div>
+        <div class="photo-card" style="--r: -1deg">
+          <img src="foto2.jpeg" />
+        </div>
+      </div>
+
+      <div class="poem-section">
+        <p>
+          "Como el lirio entre los espinos,<br />
+          así resplandeces tú en mi camino.<br />
+          Eres el jardín que Dios plantó con esmero,<br />
+          el regalo más puro, mi amor más sincero.<br /><br />
+
+          Tus ojos, dos zafiros de un verde profundo,<br />
+          son el brillo más dulce que existe en este mundo.<br />
+          Reflejan la calma, la fe y la esperanza,<br />
+          y en su mirada mi alma descansa.<br /><br />
+
+          Como dice Cantares, eres lirio de los valles,<br />
+          la gracia de Dios en todos tus detalles.<br />
+          Hoy te entrego mi afecto y mi admiración,<br />
+          porque eres, por siempre, mi bendición."
+        </p>
+        <div class="bible-ref">CANTAR DE LOS CANTARES 2:2</div>
+      </div>
+
+      <div style="margin: 30px 0">
+        <button onclick="enviarRespuesta()">¡Acepto, Dietmar Jaco! ❤️</button>
+      </div>
+    </div>
+
+    <script>
+      function lluviaDeLirios() {
+        const symbols = ["🪷", "🌸", "✨", "🤍"];
+        setInterval(() => {
+          const leaf = document.createElement("div");
+          leaf.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+          leaf.style.position = "fixed";
+          leaf.style.top = "-20px";
+          leaf.style.left = Math.random() * 100 + "vw";
+          leaf.style.fontSize = Math.random() * 20 + 15 + "px";
+          leaf.style.transition = "transform 6s linear, opacity 6s";
+          document.body.appendChild(leaf);
+          setTimeout(() => {
+            leaf.style.transform = `translateY(110vh) rotate(${Math.random() * 360}deg)`;
+            leaf.style.opacity = "0";
+          }, 100);
+          setTimeout(() => leaf.remove(), 7000);
+        }, 400);
+      }
+
+      window.onload = function () {
+        lluviaDeLirios();
+        const musica = document.getElementById("miMusica");
+        musica.play().catch(() => console.log("Autoplay bloqueado"));
+      };
+
+      function toggleMusic() {
+        const musica = document.getElementById("miMusica");
+        const icon = document.getElementById("musicControl");
+        if (musica.paused) {
+          musica.play();
+          icon.innerHTML = "🎵";
+        } else {
+          musica.pause();
+          icon.innerHTML = "🔇";
+        }
+      }
+
+      function enviarRespuesta() {
+        const TU_TELEFONO = "51957221228"; // 👈 CAMBIA ESTO
+        const MENSAJE =
+          "¡Acepto ser tu San Valentín! Tu sorpresa me llegó al alma... 🪷❤️";
+        window.location.href = `https://wa.me/${TU_TELEFONO}?text=${encodeURIComponent(MENSAJE)}`;
+      }
+    </script>
+  </body>
+</html>
